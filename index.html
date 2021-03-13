@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceApp</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/financeAppIcon.png">
+</head>
+
+<body>
+
+    <header>
+        <img src="/assets/financeAppLogo.png" alt="Finance App Logo">
+    </header>
+
+    <main class="container">
+        <section id="balance">
+            <h2 class="sr-only">balance</h2>
+
+            <div class="card saldo">
+                <h3>
+                    <span>
+                        Total:
+                    </span>
+                    <img src="/assets/total.svg" alt="Imagem de saldo">
+                </h3>
+                <p id="totalDisplay"> CA$ 0,00</p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span>
+                        Incomes:
+                    </span>
+                    <img src="/assets/income.svg" alt="Imagem de Entradas">
+                </h3>
+                <p id="incomeDisplay">CA$ 0,00</p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span>
+                        Expenses:
+                    </span>
+                    <img src="/assets/expense.svg" alt="Imagem de Saídas">
+                </h3>
+                <p id="expenseDisplay">CA$ 0,00</p>
+            </div>
+
+        </section>
+
+        <section id="transactions">
+            <h2 class="sr-only">Transactions:</h2>
+
+            <a onclick="Modal.toggle()" href="#" class="button new">+ New Transaction</a>
+
+            <table id="data-table">
+
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>New Transaction</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label class="sr-only" for="description">Description</label>
+                        <input type="text" name="description" id="description" placeholder="Description" />
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="amount">Amount</label>
+                        <input type="number" step="0.01" name="amount" id="amount" placeholder="CA$0.00" />
+                    </div>
+                    <small class="help">Use the signal - (negative) for expenses and . (dot) for decimals</small>
+                    <div class="input-group">
+                        <label class="sr-only" for="date">Data</label>
+                        <input type="date" name="date" id="date" />
+                    </div>
+                    <div class="input-group actions">
+                        <a onclick="Modal.toggle()" href="#" class="button cancel">Cancel</a>
+                        <button>Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>FinanceApp</p>
+    </footer>
+
+    <script src="/scripts.js"></script>
+
+</body>
+
+</html>
