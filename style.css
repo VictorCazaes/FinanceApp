@@ -37,8 +37,14 @@ body {
   border-width: 0;
 }
 .container {
+  opacity: 0;
+  visibility: hidden;
+}
+.container.active {
   width: min(90vw, 800px);
   margin: auto;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Titles ==============================*/
@@ -87,16 +93,26 @@ button:hover {
 .button.cancel:hover {
   opacity: 1;
 }
+.login-button {
+  background: var(--dark-blue);
+  color: var(--ice);
+  width: 100%;
+  height: 50px;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-button:hover {
+  background: var(--ice);
+  color: var(--dark-blue);
+}
 
 /* Header ==============================*/
 header {
   background: var(--dark-blue);
   padding: 2rem 0 14rem;
   text-align: center;
-}
-#logo {
-  color: var(--ice);
-  font-weight: 100;
 }
 
 /* Balance ==============================*/
@@ -177,6 +193,43 @@ td.expense {
   color: var(--scarlet);
 }
 
+/* Login ==============================*/
+.login-overlay.active {
+  width: 100%;
+  height: 100%;
+  background-color: var(--star-command-blue);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+}
+.login-overlay {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+.login-box {
+  padding: 2.4rem;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-logo img {
+  width: 6rem;
+  -webkit-user-drag: none;
+}
+
 /* Modal ==============================*/
 .modal-overlay {
   width: 100%;
@@ -187,7 +240,6 @@ td.expense {
   display: flex;
   justify-content: center;
   align-items: center;
-
   opacity: 0;
   visibility: hidden;
   z-index: 999;

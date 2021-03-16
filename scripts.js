@@ -4,6 +4,13 @@ const Modal = {
     }
 }
 
+const Login = {
+    toggle () {
+        document.querySelector(".login-overlay.active").classList.toggle("active")
+        document.querySelector(".container").classList.toggle("active")
+    }
+}
+
 const Storage = {
     get() {
         return JSON.parse(localStorage.getItem("FinanceApp:transactions")) || []

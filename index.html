@@ -18,7 +18,6 @@
     <header>
         <img src="/assets/financeAppLogo.png" alt="Finance App Logo">
     </header>
-
     <main class="container">
         <section id="balance">
             <h2 class="sr-only">balance</h2>
@@ -103,6 +102,31 @@
                         <button>Save</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div class="login-overlay active">
+        <div class="login-box">
+            <div id="login">
+                <div class="login-logo">
+                    <img src="/assets/financeAppLogo.png" alt="Finance App Logo">
+                </div>
+                <form action="" onsubmit="">
+                    <div class="input-group">
+                        <label class="sr-only" for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Username" />
+                    </div>
+                    <div class="input-group">
+                        <label class="sr-only" for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password" />
+                    </div>
+                    <div class="input-group actions">
+                        <a onclick="Login.toggle()" href="#" class="login-button">Login</a>
+                    </div>
+                </form>
+                <footer>
+                    <p>FinanceApp</p>
+                </footer>
             </div>
         </div>
     </div>
