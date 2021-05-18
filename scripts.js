@@ -73,7 +73,7 @@ const DOM = {
         <td class="description">${transaction.description}</td>
         <td class="${CSSclass}">${amount}</td>
         <td class="date">${transaction.date}</td>
-        <td><img onclick="Transaction.remove(${index})" src="/assets/minus.svg" alt="Remover Transação"></td>
+        <td><img onclick="Transaction.remove(${index})" src="/assets/minus.svg" alt="Remove Transaction"></td>
         `
 
         return html
@@ -124,7 +124,7 @@ const Form = {
     validateFields() {
         const {description, amount, date} = Form.getValues()
         if(description.trim() === "" || amount.trim() === "" || date.trim() === "") {
-            throw new Error("Please, fill out all filds")
+            throw new Error("Please, fill out all fields")
         }
     },
     formatValues() {
